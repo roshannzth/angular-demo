@@ -1,16 +1,16 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from "@angular/core";
+import { BrowserModule } from "@angular/platform-browser";
+import { AppRootComponent } from "./components/appRoot.component";
+import { WidgetsModule } from "./widgets/widgets.module";
 
-import { AppComponent } from './app.component';
-
+//decorators - Typescript building block, supports metadata programming
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    BrowserModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations:[AppRootComponent],
+    imports:[BrowserModule, WidgetsModule],
+    exports:[],
+    providers:[],
+    bootstrap:[AppRootComponent]
 })
-export class AppModule { }
+export class AppModule {
+
+}
