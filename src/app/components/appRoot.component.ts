@@ -1,5 +1,6 @@
 
-import { Component } from "@angular/core";
+import { Component, Inject } from "@angular/core";
+import { ConsoleLoggerService } from "../services/consoleLogger.service";
 
 @Component({
     templateUrl:"./appRoot.component.html",
@@ -7,5 +8,7 @@ import { Component } from "@angular/core";
     selector:'app-root'
 })
 export class AppRootComponent {
-
+    constructor(@Inject("logger")loggerService:ConsoleLoggerService){
+        loggerService.write("Approot component instaintes");
+    }
 }

@@ -1,5 +1,6 @@
 import { Component } from "@angular/core";
 import { BmiInputModel } from "src/app/models/bmiInput.model";
+import { BmiCalculatorService } from "src/app/services/bmiCalculator.service";
 
 
 @Component({
@@ -8,9 +9,14 @@ import { BmiInputModel } from "src/app/models/bmiInput.model";
 })
 export class BMICalculatorComponent {
 
+    calcService:BmiCalculatorService;
     bmiResult:number = 0;
 
+    constructor(service:BmiCalculatorService){
+        this.calcService = service;
+    }
+
     calculateBMI(data:BmiInputModel){
-        this.bmiResult = data.height * data.weight ;
+        this.bmiResult = this.calcService.calculateBMI(data);
     }
 }
